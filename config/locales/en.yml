@@ -1,0 +1,9 @@
+en:
+  zendesk_ticket:
+    ticket:
+      errors:
+        blank:
+          subject: 'Subject cannot be empty'
+    user:
+      errors:
+        invalid: 'Invalid email or password'

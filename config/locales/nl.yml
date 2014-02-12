@@ -1,0 +1,9 @@
+nl:
+  zendesk_ticket:
+    ticket:
+      errors:
+        blank:
+          subject: 'Onderwerp mag niet leef zijn'
+    user:
+      errors:
+        invalid: 'Ongeldig e-mail of wachtwoord'

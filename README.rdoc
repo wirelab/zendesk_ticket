@@ -21,5 +21,16 @@ Check 'access with token' and write down the API-token
 
 # Configuring
 
+To generate an intializer and translation files, run
+
+````ruby
+rails generate zendesk_ticket:install
+````
+
+Add the following to your environment:
+ZENDESK_TOKEN The token you just got from zendesk
+ZENDESK_URL https://YOUR_COMPANY.zendesk.com/
+
+
 # License
 This project rocks and uses MIT-LICENSE.
