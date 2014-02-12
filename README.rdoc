@@ -1,3 +1,25 @@
-= ZendeskTicket
+= Zendesk Ticket
 
+# Installation
+Include the gem in your Gemfile
+
+```ruby
+gem 'zendesk_ticket'
+```
+
+Bundle the Gemfile
+
+```ruby
+bundle install
+```
+
+# Setup Zendesk
+
+Create an account at zendesk and visit https://YOUR_COMPANY.zendesk.com/agent/#/admin/api
+
+Check 'access with token' and write down the API-token
+
+# Configuring
+
+# License
 This project rocks and uses MIT-LICENSE.

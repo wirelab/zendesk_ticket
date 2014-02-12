@@ -7,11 +7,11 @@ require "zendesk_ticket/version"
 Gem::Specification.new do |s|
   s.name        = "zendesk_ticket"
   s.version     = ZendeskTicket::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of ZendeskTicket."
-  s.description = "TODO: Description of ZendeskTicket."
+  s.authors     = ["Andre Kramer"]
+  s.email       = ["andre@wirelab.nl"]
+  s.homepage    = "http://www.wirelab.nl"
+  s.summary     = "Summary of ZendeskTicket."
+  s.description = "Description of ZendeskTicket."
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
 
