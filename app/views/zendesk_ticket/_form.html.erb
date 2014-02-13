@@ -1,13 +1,13 @@
 <h2><%= I18n.t('title', scope: 'zendesk_ticket.ticket.form') %></h2>
 <%= form_tag zendesk_ticket_path, method: "post", class: "zendesk_ticket_form", data: { "zendesk-ticket-form" => true } do %>
-  <%= label_tag :username, I18n.t('username', scope: 'zendesk_ticket.ticket.form.labels') %>
-  <%= email_field :ticket, :username, placeholder: I18n.t('username', scope: 'zendesk_ticket.ticket.form.placeholders') %>
+  <%= label_tag "ticket[username]", I18n.t('username', scope: 'zendesk_ticket.ticket.form.labels') %>
+  <%= email_field :ticket, :username, placeholder: I18n.t('username', scope: 'zendesk_ticket.ticket.form.placeholders'), required: true %>
     
-  <%= label_tag :subject, I18n.t('subject', scope: 'zendesk_ticket.ticket.form.labels') %>
+  <%= label_tag "ticket[subject]", I18n.t('subject', scope: 'zendesk_ticket.ticket.form.labels') %>
   <%= text_field :ticket, :subject, placeholder: I18n.t('subject', scope: 'zendesk_ticket.ticket.form.placeholders') %>
 
-   <%= label_tag :description, I18n.t('description', scope: 'zendesk_ticket.ticket.form.labels') %>
-   <%= text_area_tag :description, nil, id: 'ticket_description', name: 'ticket[description]', size: "24x6", placeholder: I18n.t('description', scope: 'zendesk_ticket.ticket.form.placeholders') %>
+   <%= label_tag "ticket[description]", I18n.t('description', scope: 'zendesk_ticket.ticket.form.labels') %>
+   <%= text_area_tag :description, nil, id: 'ticket_description', required: false, name: 'ticket[description]', size: "24x6", placeholder: I18n.t('description', scope: 'zendesk_ticket.ticket.form.placeholders') %>
 
   <%= submit_tag I18n.t('submit', scope: 'zendesk_ticket.ticket.form') %>
 <% end %>
