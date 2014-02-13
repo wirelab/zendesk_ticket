@@ -4,7 +4,7 @@ module ZendeskTicket
   module Rails
     class Engine < ::Rails::Engine
       initializer :assets, :group => :all do
-        ::Rails.application.config.assets.precompile += ['zendesk_ticket.css']
+        ::Rails.application.config.assets.precompile += %w( zendesk_ticket.css zendesk_ticket.js)
       end
     end
   end
