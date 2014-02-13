@@ -1,6 +1,6 @@
-= Zendesk Ticket
+# Zendesk Ticket
 
-# Installation
+## Installation
 Include the gem in your Gemfile
 
 ```ruby
@@ -13,13 +13,13 @@ Bundle the Gemfile
 bundle install
 ```
 
-# Setup Zendesk
+## Setup Zendesk
 
 Create an account at zendesk and visit https://YOUR_COMPANY.zendesk.com/agent/#/admin/api
 
 Check 'access with token' and write down the API-token
 
-# Configuring
+## Configuring
 
 To generate an intializer and translation files, run
 
@@ -28,8 +28,8 @@ rails generate zendesk_ticket:install
 ```
 
 Add the following to your environment:
-ZENDESK_TOKEN The token you just got from zendesk
-ZENDESK_URL https://YOUR_COMPANY.zendesk.com/
+* ZENDESK_TOKEN The token you just got from zendesk
+* ZENDESK_URL https://YOUR_COMPANY.zendesk.com/
 
 Add to your application.css:
 ```css
@@ -44,12 +44,12 @@ To your application.js:
 ```
 
 In your html
-```ruby
+```
   <%= render "zendesk_ticket/popup" %>
   <%= render "zendesk_ticket/button" %>
 ```
 
 If you want to use a custom button to call the popup, you can leave out the zendesk_ticket/button partial and add data-zendesk-ticket-button to your button.
 
-# License
+## License
 This project rocks and uses MIT-LICENSE.
