@@ -14,14 +14,13 @@ class ZendeskTicket::TicketsController < ActionController::Base
       if ticket.save
         render json: { message:  I18n.t('created', scope: 'zendesk_ticket.ticket.success') }, status: :created
       else
-        render json: { errors: ticket.errors.to_json }, status: :unprocessable_entity
+        render json: { errors: ticket.errors }, status: :unprocessable_entity
       end
     else
+      error = { username: I18n.t('unauthorized', scope: 'zendesk_ticket.user.errors') }
       render json: { 
         errors: {
-          base: { 
-            username: I18n.t('unauthorized', scope: 'zendesk_ticket.user.errors') 
-          }
+          base: [error]
         } 
       }, status: :unauthorized
     end
