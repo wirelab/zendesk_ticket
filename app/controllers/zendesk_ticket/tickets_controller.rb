@@ -5,23 +5,28 @@ class ZendeskTicket::TicketsController < ActionController::Base
   layout :false
 
   def create
-    ticket = ::ZendeskAPI::Ticket.new(client)
-    ticket.subject = ticket_params[:subject]
-    ticket.description = ticket_params[:description]
-    ticket.submitter_id = client.current_user.id
+    if is_client_authenticated?
+      ticket = ::ZendeskAPI::Ticket.new(client)
+      ticket.subject = ticket_params[:subject]
+      ticket.description = ticket_params[:description]
+      ticket.submitter_id = client.current_user.id
 
-    if ticket.save
-      render json: {
-        message: 'Bedankt, we nemen zo spoedig mogelijk contact met u op!'
-      }, status: :created
+      if ticket.save
+        render json: { message:  I18n.t('created', scope: 'zendesk_ticket.ticket.success') }, status: :created
+      else
+        render json: { errors: ticket.errors.to_json }, status: :unprocessable_entity
+      end
     else
-      render json: ticket.errors.to_json, status: :unprocessable_entity
+      render json: { 
+        errors: {
+          base: { 
+            username: I18n.t('unauthorized', scope: 'zendesk_ticket.user.errors') 
+          }
+        } 
+      }, status: :unauthorized
     end
   end
 
-  def index
-    raise 'hoi'
-  end
   private
   def client
     client = ::ZendeskAPI::Client.new do |config|
@@ -31,6 +36,10 @@ class ZendeskTicket::TicketsController < ActionController::Base
     end
 
     client
+  end
+
+  def is_client_authenticated?
+    client.current_user.id.present? # an invalid user still returns an user object, but has nil as an id
   end
 
   def ticket_params
