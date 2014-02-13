@@ -1,0 +1,58 @@
+form.zendesk_ticket_form{
+  label{
+    color: #ff4056;
+    font-size: 18px;
+    line-height: 20px;
+    margin: 0 0 10px;
+    display: block;
+  }
+  input[type="text"], input[type="email"], input[type="password"], input[type="tel"], input[type="url"], input[type="search"] {
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    background: white;
+    color: #555555;
+    border: 1px solid #dfded9;
+    margin: 0 0 20px;
+    padding: 0 10px;
+    font-family: arial, verdana, sans-serif;
+  }
+  textarea{
+    height: 100px;
+    line-height: 25px;
+    font-size: 14px;
+    background: white;
+    color: #555555;
+    border: 1px solid #dfded9;
+    margin: 0 0 20px;
+    padding: 10px;
+    font-family: arial, verdana, sans-serif;
+    resize: none;
+  }
+  label, input, textarea{
+    width: 430px;
+  }
+  input[type="submit"]{
+    width: auto;
+    height: 48px;
+    line-height: 48px;
+    font-size: 16px;
+    font-weight: normal;
+    text-decoration: none;
+    color: #ff4056;
+    background: none;
+    border: 1px solid #dfded9;
+    padding: 0 25px;
+    font-family: arial, verdana, sans-serif;
+    display: block;
+    float: left;
+    cursor: pointer;
+
+    &:hover{
+      background: #ff4056;
+      color: white;
+      text-decoration: none;
+      border: 1px solid #ff4056;
+    }
+  }
+}

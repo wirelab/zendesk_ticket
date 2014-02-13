@@ -1,6 +1,13 @@
 require 'zendesk_api'
+
 module ZendeskTicket
-  class Engine < Rails::Engine; end
+  module Rails
+    class Engine < ::Rails::Engine
+      initializer :assets, :group => :all do
+        ::Rails.application.config.assets.precompile += ['zendesk_ticket.css']
+      end
+    end
+  end
 end
 
 module ZendeskTicket

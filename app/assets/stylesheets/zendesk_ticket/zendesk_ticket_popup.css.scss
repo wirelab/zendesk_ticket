@@ -1,0 +1,31 @@
+.zendesk_ticket_popup_container{
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color: rgba(255,255,255, 0.7);
+}
+.zendesk_ticket_popup{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-left: -250px;
+  margin-top: -250px;
+  width: 500px;
+  height: 500px;
+  z-index: 99;
+  background-color: white;
+  border: 1px solid black;
+  padding: 20px;
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+.hidden{
+  display: none;
+}
+.zendesk_ticket_popup h2{
+  font-size: 24px;
+  line-height: 30px;
+  color: #555555;
+  margin-bottom: 24px;
+}
