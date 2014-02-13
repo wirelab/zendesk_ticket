@@ -1,5 +1,11 @@
 # Zendesk Ticket
 
+A widget to send tickets to your companies zendesk. No OAuth, login once and send additional metadata in the ticket like the user agent, url and resolution.
+
+Use this on for instance an acceptance server. A client (which you registered) can leave feedback without letting him go through the trouble of authenticating with oauth. The developer doesn't have to register a new app or app domain, he only have to set up zendesk and the token once.
+
+Because you use the api token to authenticate the user, there is a minor security issue, where client of product A could leave feedback on product B if he knows the acceptance url of product B.
+
 ## Installation
 Include the gem in your Gemfile
 
