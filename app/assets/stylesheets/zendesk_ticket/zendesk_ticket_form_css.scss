@@ -29,7 +29,7 @@ form.zendesk_ticket_form{
     font-family: arial, verdana, sans-serif;
     resize: none;
   }
-  label, input, textarea{
+  label, input, textarea, span.error{
     width: 430px;
   }
   input[type="submit"]{
@@ -54,5 +54,13 @@ form.zendesk_ticket_form{
       text-decoration: none;
       border: 1px solid #ff4056;
     }
+  }
+  span.error{
+    color: white;
+    background: #e33434;
+    display: block;
+    padding: 10px;
+    margin: -20px 0 20px 0;
+    font-size: 12px;
   }
 }
