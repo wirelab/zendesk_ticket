@@ -24,6 +24,7 @@ nl:
         title: 'Bedankt'
         create_another: 'Nog een ticket aanmaken?'
         link: 'Uw ticket is aangemaakt, bekijk uw ticket hier:'
+        link_name: 'Uw ticket'
     user:
       errors:
         unauthorized: 'Ongeldig e-mail of wachtwoord'
