@@ -40,13 +40,13 @@ Add the following to your environment:
 Add to your application.css:
 ```css
 /*
- * require zendesk_ticket.css
+ * require zendesk_ticket
  */
 ```
 
 To your application.js: 
 ```javascript
-//= require zendesk_ticket.js
+//= require zendesk_ticket
 ```
 
 In your html
