@@ -1,7 +1,7 @@
 nl:
   zendesk_ticket:
     buttons:
-      new_ticket: 'Feedback'  
+      new_ticket: 'Feedback'
       close: 'sluiten'
     ticket:
       form:
@@ -23,6 +23,7 @@ nl:
       thankyou:
         title: 'Bedankt'
         create_another: 'Nog een ticket aanmaken?'
+        link: 'Uw ticket is aangemaakt, bekijk uw ticket hier:'
     user:
       errors:
         unauthorized: 'Ongeldig e-mail of wachtwoord'
