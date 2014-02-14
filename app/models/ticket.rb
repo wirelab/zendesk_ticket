@@ -1,5 +1,5 @@
 class Ticket
-  attr_accessor :errors
+  attr_reader :errors
 
   def initialize params
     @description = params[:description]
