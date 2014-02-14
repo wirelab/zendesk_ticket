@@ -9,7 +9,7 @@ class ZendeskTicket::TicketsController < ActionController::Base
     if is_client_authenticated?
       ticket = ::ZendeskAPI::Ticket.new(client)
       ticket.subject = ticket_params[:subject]
-      ticket.description = ticket_params[:description] if ticket_params[:description].present?
+      ticket.description = ticket_params[:description]
       ticket.submitter_id = client.current_user.id
 
       if ticket.save
