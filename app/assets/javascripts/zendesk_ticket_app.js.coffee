@@ -75,6 +75,7 @@ class ZendeskTicketApp
       type: 'POST'
       dataType: 'json'
       success: (data) ->
+        $form.find('span.error').remove()
         $.cookie 'zendesk_email', $form.find('input[name="ticket[username]"]').val(), { expires: 30, path: '/' }
         app.toggleUsernameInput($.cookie('zendesk_email'))
 
