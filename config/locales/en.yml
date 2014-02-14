@@ -1,9 +1,30 @@
-en:
+end:
   zendesk_ticket:
+    buttons:
+      new_ticket: 'Feedback'
+      close: 'close'
     ticket:
+      form:
+        title: 'Create a new ticket'
+        submit: 'Submit'
+        labels:
+          email: 'Your service email address:'
+          subject: 'Subject:'
+          description: 'Description:'
+        placeholders:
+          email: 'example@yourcompany.com'
+          subject: 'In short'
+          description: 'Description of the problem'
       errors:
         blank:
-          subject: 'Subject cannot be empty'
+          subject: 'Subject can''t be blank'
+      success:
+        created: 'Ticket has been created'
+      thankyou:
+        title: 'Thank you'
+        create_another: 'Create another ticket?'
+        link: 'Your ticket has been created, view your ticket here:'
+        link_name: 'Your ticket'
     user:
       errors:
-        invalid: 'Invalid email or password'
+        unauthorized: 'Invalid email'
