@@ -29,6 +29,12 @@ form.zendesk_ticket_form{
     font-family: arial, verdana, sans-serif;
     resize: none;
   }
+  input, textarea{
+    &::-webkit-input-placeholder { color: #ccc; }
+    &:-moz-placeholder { color: #ccc;  }
+    &::-moz-placeholder { color: #ccc; }
+    &:-ms-input-placeholder {  color: #ccc; }
+  }
   label, input, textarea, span.error{
     width: 430px;
   }
