@@ -1,7 +1,7 @@
 class ZendeskTicket::TicketsController < ActionController::Base
   require 'zendesk_api'
   require 'uri'
-  
+
   respond_to :json
   layout :false
 
@@ -13,7 +13,7 @@ class ZendeskTicket::TicketsController < ActionController::Base
       ticket.submitter_id = client.current_user.id
 
       if ticket.save
-        base_url = URI::join(ZendeskTicket.url, "/").to_s
+        base_url = URI::join(ZendeskTicket.url, '/').to_s
         ticket_url = "#{base_url}tickets/#{ticket.id}"
         render json: { message:  I18n.t('created', scope: 'zendesk_ticket.ticket.success'), ticket: { url: ticket_url } }, status: :created
       else
@@ -21,23 +21,21 @@ class ZendeskTicket::TicketsController < ActionController::Base
       end
     else
       error = { username: I18n.t('unauthorized', scope: 'zendesk_ticket.user.errors') }
-      render json: { 
+      render json: {
         errors: {
           base: [error]
-        } 
+        }
       }, status: :unauthorized
     end
   end
 
   private
   def client
-    client = ::ZendeskAPI::Client.new do |config|
+    ::ZendeskAPI::Client.new do |config|
       config.url = ZendeskTicket.url
       config.username = ticket_params[:username]
       config.token = ZendeskTicket.api_token
     end
-
-    client
   end
 
   def is_client_authenticated?
