@@ -1,0 +1,8 @@
+<div class="thankyou slide">
+  <h2><%= I18n.t('title', scope: 'zendesk_ticket.ticket.thankyou') %></h2>
+  <p>Uw ticket is aangemaakt, bekijk uw ticket hier: <span data-zendesk-ticket-url></span></p>
+  <br />
+<a href="javascript: " data-zendesk-ticket-back class="zendesk_ticket_button" ><%= I18n.t('create_another', scope: 'zendesk_ticket.ticket.thankyou') %></a>
+<a href="javascript: " data-zendesk-ticket-close  class="zendesk_ticket_button"><%= I18n.t('close', scope: 'zendesk_ticket.buttons') %></a>
+</div>
+

@@ -5,6 +5,7 @@
   left: 0;
   position: fixed;
   background-color: rgba(255,255,255, 0.7);
+  z-index: 99;
 }
 .zendesk_ticket_popup{
   position: fixed;
@@ -23,9 +24,56 @@
 .hidden{
   display: none;
 }
+.clear{
+  clear: both;
+}
 .zendesk_ticket_popup h2{
   font-size: 24px;
   line-height: 30px;
   color: #555555;
   margin-bottom: 24px;
+}
+.zendesk_ticket_popup a{
+  text-decoration: underline;
+  &:hover{
+    color: #ff4056;
+  }
+}
+.zendesk_ticket_popup a.zendesk_ticket_button{
+  width: auto;
+  height: 48px;
+  line-height: 48px;
+  font-size: 16px;
+  font-weight: normal;
+  text-decoration: none;
+  color: #ff4056;
+  background: none;
+  border: 1px solid #dfded9;
+  padding: 0 25px;
+  font-family: arial, verdana, sans-serif;
+  display: block;
+  float: left;
+  cursor: pointer;
+
+  &:hover{
+    background: #ff4056;
+    color: white;
+    text-decoration: none;
+    border: 1px solid #ff4056;
+  }
+}
+
+
+.zendesk_ticket_popup{
+  overflow: hidden;
+}
+.zendesk_ticket_slides{
+  width: 1000px;
+  height: 500px;
+
+  .slide{
+    float:left;
+    min-height: 400px;
+    width: 500px;
+  }
 }

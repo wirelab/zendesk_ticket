@@ -1,3 +1,4 @@
+<div class="form slide">
 <h2><%= I18n.t('title', scope: 'zendesk_ticket.ticket.form') %></h2>
 <%= form_tag zendesk_ticket_path, method: "post", class: "zendesk_ticket_form", data: { "zendesk-ticket-form" => true } do %>
   <%= label_tag "ticket[username]", I18n.t('username', scope: 'zendesk_ticket.ticket.form.labels') %>
@@ -10,4 +11,7 @@
    <%= text_area_tag :description, nil, id: 'ticket_description', required: false, name: 'ticket[description]', size: "24x6", placeholder: I18n.t('description', scope: 'zendesk_ticket.ticket.form.placeholders') %>
 
   <%= submit_tag I18n.t('submit', scope: 'zendesk_ticket.ticket.form') %>
+  <a href="javascript: " data-zendesk-ticket-close  class="zendesk_ticket_button" ><%= I18n.t('close', scope: 'zendesk_ticket.buttons') %></a>
 <% end %>
+<div class="clear"></div>
+</div>

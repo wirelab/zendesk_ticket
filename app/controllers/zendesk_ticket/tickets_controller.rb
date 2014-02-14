@@ -1,5 +1,6 @@
 class ZendeskTicket::TicketsController < ActionController::Base
   require 'zendesk_api'
+  require 'uri'
   
   respond_to :json
   layout :false
@@ -8,11 +9,13 @@ class ZendeskTicket::TicketsController < ActionController::Base
     if is_client_authenticated?
       ticket = ::ZendeskAPI::Ticket.new(client)
       ticket.subject = ticket_params[:subject]
-      ticket.description = ticket_params[:description]
+      ticket.description = ticket_params[:description] if ticket_params[:description].present?
       ticket.submitter_id = client.current_user.id
 
       if ticket.save
-        render json: { message:  I18n.t('created', scope: 'zendesk_ticket.ticket.success') }, status: :created
+        base_url = URI::join(ZendeskTicket.url, "/").to_s
+        ticket_url = "#{base_url}tickets/#{ticket.id}"
+        render json: { message:  I18n.t('created', scope: 'zendesk_ticket.ticket.success'), ticket: { url: ticket_url } }, status: :created
       else
         render json: { errors: ticket.errors }, status: :unprocessable_entity
       end

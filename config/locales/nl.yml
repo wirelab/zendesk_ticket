@@ -2,6 +2,7 @@ nl:
   zendesk_ticket:
     buttons:
       new_ticket: 'Feedback'  
+      close: 'sluiten'
     ticket:
       form:
         title: 'Maak een ticket aan'
@@ -19,6 +20,9 @@ nl:
           subject: 'Onderwerp mag niet leeg zijn'
       success:
         created: 'Ticket is aangemaakt'
+      thankyou:
+        title: 'Bedankt'
+        create_another: 'Nog een ticket aanmaken?'
     user:
       errors:
         unauthorized: 'Ongeldig e-mail of wachtwoord'
