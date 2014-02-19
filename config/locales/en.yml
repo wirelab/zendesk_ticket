@@ -25,6 +25,9 @@ en:
         create_another: 'Create another ticket?'
         link: 'Your ticket has been created, view your ticket here:'
         link_name: 'Your ticket'
+    session:
+      logout: "Login as a different user."
+      logged_in_as: "Logged in as "
     user:
       errors:
         unauthorized: 'Invalid email'

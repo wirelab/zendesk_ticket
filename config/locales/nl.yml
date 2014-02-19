@@ -18,6 +18,7 @@ nl:
       errors:
         blank:
           subject: 'Onderwerp mag niet leeg zijn'
+        unknown: "Onbekende fout opgetreden"
       success:
         created: 'Ticket is aangemaakt'
       thankyou:
@@ -25,6 +26,9 @@ nl:
         create_another: 'Nog een ticket aanmaken?'
         link: 'Uw ticket is aangemaakt, bekijk uw ticket hier:'
         link_name: 'Uw ticket'
+    session:
+      logout: "Bent u dit niet? Log hier dan uit."
+      logged_in_as: "Ingelogd als "
     user:
       errors:
         unauthorized: 'Ongeldig e-mail of wachtwoord'

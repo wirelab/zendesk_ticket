@@ -109,8 +109,8 @@ class ZendeskTicketApp.Form extends ZendeskTicketApp.Base
   createLogoutButton: (email) =>
     $info = $('[data-zendesk-ticket-username]')
     if $info.length == 0
-      $info = $('<p data-zendesk-ticket-username /><br />').html("<span>Ingelogd als #{email}.</span>")
-      $logout = $('<a href="javascript: ">Bent u dit niet? Log hier dan uit.</a>')
+      $info = $('<p data-zendesk-ticket-username /><br />').html("<span>#{I18n.session.logged_in_as} #{email}.</span>")
+      $logout = $("<a href='javascript: '>#{I18n.session.logout}</a>")
       $logout.on 'click', =>
         @events.trigger 'logout:session', email
       $info.append $logout
@@ -154,7 +154,7 @@ class ZendeskTicketApp.Form extends ZendeskTicketApp.Base
       # reset errors
       $form.find('span.error').remove()
       # display ticket url
-      $('[data-zendesk-ticket-url]').html $("<a href='#{data.ticket.url}' target='_blank'>Uw ticket.</a>")
+      $('[data-zendesk-ticket-url]').html $("<a href='#{data.ticket.url}' target='_blank'>#{I18n.thankyou.link_name}</a>")
 
     post.fail (xhr, data) ->
       $form.find('span.error').remove()
@@ -163,7 +163,7 @@ class ZendeskTicketApp.Form extends ZendeskTicketApp.Base
           $error = $("<span />").addClass('error').html message
           $form.find("[name='ticket[#{attribute}]']").after $error
       else
-        alert 'Unknown error has occured'
+        alert I18n.ticket.errors.unknown
 
   reset: =>
     @$el.find('input[name="ticket[subject]"]').val('')
@@ -183,9 +183,6 @@ class ZendeskTicketApp.Session extends ZendeskTicketApp.Base
   destroy: ->
     $.removeCookie 'zendesk_email', { path: '/' }
 
-window.ZendeskTicketApp = ZendeskTicketApp
-
 $ ->
   app = new ZendeskTicketApp
   app.initialize()
-
