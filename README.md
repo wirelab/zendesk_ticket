@@ -10,7 +10,7 @@ Because you use the api token to authenticate the user, there is a minor securit
 Include the gem in your Gemfile
 
 ```ruby
-gem 'zendesk_ticket'
+gem 'zendesk_ticket', git: 'https://github.com/wirelab/zendesk_ticket.git'
 ```
 
 Bundle the Gemfile
