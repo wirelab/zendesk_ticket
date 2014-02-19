@@ -1,7 +1,7 @@
 module ZendeskTicketHelper
   def zendesk_ticket_translation_json
+    I18n.backend.send(:init_translations) unless I18n.backend.initialized?
     translations = I18n.backend.send(:translations).with_indifferent_access
-    #raise I18n.backend.send(:translations).with_indifferent_access[I18n.locale].to_yaml
     if translations[I18n.locale][:zendesk_ticket].present?
       translations = translations[I18n.locale][:zendesk_ticket]
     else
