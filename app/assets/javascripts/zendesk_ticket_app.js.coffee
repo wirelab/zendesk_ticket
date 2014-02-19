@@ -1,3 +1,5 @@
+isBusy = false
+
 class ZendeskTicketApp
   constructor: ->
     @events = $({})
@@ -37,10 +39,13 @@ class ZendeskTicketApp.Popup extends ZendeskTicketApp.Base
     @events.on 'open:popup', @open
     @events.on 'close:popup', @close
   toggle: =>
+    return false if isBusy
     @$el.toggleClass('hidden')
   open: =>
+    return false if isBusy
     @$el.removeClass('hidden')
   close: =>
+    return false if isBusy
     @$el.addClass('hidden')
 
 # Slider, going back and forwards between form and thankyou page
@@ -129,6 +134,10 @@ class ZendeskTicketApp.Form extends ZendeskTicketApp.Base
     description
 
   submitHandler: (event) =>
+    return false if isBusy
+
+    isBusy = true #block double submission and closing popup
+
     app = this
     event.preventDefault()
     $form = $(event.currentTarget)
@@ -164,6 +173,9 @@ class ZendeskTicketApp.Form extends ZendeskTicketApp.Base
           $form.find("[name='ticket[#{attribute}]']").after $error
       else
         alert I18n.ticket.errors.unknown
+
+    post.complete ->
+      isBusy = false
 
   reset: =>
     @$el.find('input[name="ticket[subject]"]').val('')
