@@ -17,7 +17,8 @@ en:
           description: 'Description of the problem'
       errors:
         blank:
-          subject: 'Subject can''t be blank'
+          subject: "Subject can't be blank"
+        unknown: "Onbekende fout opgetreden"
       success:
         created: 'Ticket has been created'
       thankyou:
