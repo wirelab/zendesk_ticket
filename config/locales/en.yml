@@ -8,11 +8,11 @@ en:
         title: 'Create a new ticket'
         submit: 'Submit'
         labels:
-          email: 'Your service email address:'
+          username: 'Your service email address:'
           subject: 'Subject:'
           description: 'Description:'
         placeholders:
-          email: 'example@yourcompany.com'
+          username: 'example@yourcompany.com'
           subject: 'In short'
           description: 'Description of the problem'
       errors:

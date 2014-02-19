@@ -8,11 +8,11 @@ nl:
         title: 'Maak een ticket aan'
         submit: 'Insturen'
         labels:
-          email: 'Uw service e-mailadres:'
+          username: 'Uw service e-mailadres:'
           subject: 'Onderwerp:'
           description: 'Omschrijving:'
         placeholders:
-          email: 'voorbeel@example.com'
+          username: 'voorbeel@example.com'
           subject: 'In het kort'
           description: 'Omschrijving van het probleem'
       errors:
