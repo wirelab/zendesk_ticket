@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "~> 4.0.0"
   s.add_dependency 'bundler', '>= 1.1'
-  s.add_dependency "jquery-rails"
+  s.add_dependency "jquery-rails", "~> 3.0.1"
   s.add_dependency "jquery-cookie-rails"
   s.add_dependency 'zendesk_api'
 end
