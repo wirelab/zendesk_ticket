@@ -1,7 +1,5 @@
 <script>
-  <%- translations = I18n.backend.send(:translations).with_indifferent_access %>
-  <%- zendesk_ticket_translations = translations[I18n.locale][:zendesk_ticket].present? ? translations[I18n.locale][:zendesk_ticket] : {} %>
-  window.I18n = <%= zendesk_ticket_translations.to_json.html_safe %>
+  window.I18n = <%= zendesk_ticket_translation_json %>
 </script>
 <div data-zendesk-ticket-popup-container class="zendesk_ticket_popup_container hidden">
   <div class="zendesk_ticket_popup">
