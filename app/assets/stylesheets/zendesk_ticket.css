@@ -1,3 +1,6 @@
-/* 
- *= require_tree ./zendesk_ticket
+/*
+ *= require ./zendesk_ticket/reset
+ *= require ./zendesk_ticket/form
+ *= require ./zendesk_ticket/popup
+ *= require ./zendesk_ticket/button
  */

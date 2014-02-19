@@ -54,6 +54,11 @@ form.zendesk_ticket_form{
     float: left;
     cursor: pointer;
 
+    -webkit-appearance: none;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+
     &:hover{
       background: #ff4056;
       color: white;

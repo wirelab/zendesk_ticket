@@ -26,6 +26,11 @@ button.zendesk_ticket_sidebar_button{
   -o-transform:rotate(-90deg);
   -ms-transform:rotate(-90deg);
 
+  -webkit-appearance: none;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+
   &.rightside{
     left: initial;
     right: 0;
