@@ -1,4 +1,6 @@
 require 'zendesk_api'
+require 'jquery-rails'
+require 'jquery-cookie-rails'
 
 module ZendeskTicket
   module Rails
