@@ -132,6 +132,7 @@ class ZendeskTicketApp.Form extends ZendeskTicketApp.Base
     app = this
     event.preventDefault()
     $form = $(event.currentTarget)
+    events = @events
 
     data =
       ticket:
@@ -139,21 +140,23 @@ class ZendeskTicketApp.Form extends ZendeskTicketApp.Base
         subject: $form.find('input[name="ticket[subject]"]').val()
         description: @appendMetadataToDescription $form.find('textarea[name="ticket[description]"]').val()
 
-    $.ajax(
+    post = $.ajax
       url: $form.attr('action')
       data: data
       beforeSend: (xhr) ->
         xhr.setRequestHeader 'X-CSRF-Token', @csrf
       type: 'POST'
       dataType: 'json'
-    ).done((data) =>
-      @events.trigger "login:session", $form.find('input[name="ticket[username]"]').val()
-      @events.trigger "forward:slider"
+
+    post.done (data) ->
+      events.trigger "login:session", $form.find('input[name="ticket[username]"]').val()
+      events.trigger "forward:slider"
       # reset errors
       $form.find('span.error').remove()
       # display ticket url
       $('[data-zendesk-ticket-url]').html $("<a href='#{data.ticket.url}' target='_blank'>Uw ticket.</a>")
-    ).fail((xhr) =>
+
+    post.fail (xhr, data) ->
       $form.find('span.error').remove()
       if xhr.responseJSON.errors.base?
         for own attribute, message of xhr.responseJSON.errors.base[0]
@@ -161,7 +164,7 @@ class ZendeskTicketApp.Form extends ZendeskTicketApp.Base
           $form.find("[name='ticket[#{attribute}]']").after $error
       else
         alert 'Unknown error has occured'
-    )
+
   reset: =>
     @$el.find('input[name="ticket[subject]"]').val('')
     @$el.find('textarea[name="ticket[description]"]').val('')
