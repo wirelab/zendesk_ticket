@@ -44,7 +44,7 @@ Add to your application.css:
  */
 ```
 
-To your application.js: 
+To your application.js:
 ```javascript
 //= require zendesk_ticket
 ```
@@ -56,6 +56,14 @@ In your html
 ```
 
 If you want to use a custom button to call the popup, you can leave out the zendesk_ticket/button partial and add data-zendesk-ticket-button to your button.
+
+Optional:
+
+Instead of posting the form your app, you can post it to a remote website (if you for instance want a centralized server for handeling the data). If this is the case, set the following ENV variable:
+
+* ZENDESK_REMOTE_FORM_URL 'https://YOUR_COMPANY.com/'
+
+Make sure you set up the CORS right. In a future milestone, I'll look into JSONP, making the CORS not needed.
 
 ## License
 This project rocks and uses MIT-LICENSE.

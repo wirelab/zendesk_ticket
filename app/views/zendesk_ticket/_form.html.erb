@@ -1,9 +1,9 @@
 <div class="form slide">
 <h2><%= I18n.t('title', scope: 'zendesk_ticket.ticket.form') %></h2>
-<%= form_tag zendesk_ticket_path, method: "post", class: "zendesk_ticket_form", data: { "zendesk-ticket-form" => true } do %>
+<%= form_tag ENV['ZENDESK_REMOTE_FORM_URL'] || zendesk_ticket_path, method: "post", class: "zendesk_ticket_form", novalidate: true, data: { "zendesk-ticket-form" => true } do %>
   <%= label_tag "ticket[username]", I18n.t('username', scope: 'zendesk_ticket.ticket.form.labels') %>
   <%= email_field :ticket, :username, placeholder: I18n.t('username', scope: 'zendesk_ticket.ticket.form.placeholders'), required: true %>
-    
+
   <%= label_tag "ticket[subject]", I18n.t('subject', scope: 'zendesk_ticket.ticket.form.labels') %>
   <%= text_field :ticket, :subject, placeholder: I18n.t('subject', scope: 'zendesk_ticket.ticket.form.placeholders') %>
 
