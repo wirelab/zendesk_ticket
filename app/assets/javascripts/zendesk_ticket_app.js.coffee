@@ -163,7 +163,7 @@ class ZendeskTicketApp.Form extends ZendeskTicketApp.Base
       # reset errors
       $form.find('span.error').remove()
       # display ticket url
-      $('[data-zendesk-ticket-url]').html $("<a href='#{data.ticket.url}' target='_blank'>#{I18n.thankyou.link_name}</a>")
+      $('[data-zendesk-ticket-url]').html $("<a href='#{data.ticket.url}' target='_blank'>#{I18n.ticket.thankyou.link_name}</a>")
 
     post.fail (xhr, data) ->
       $form.find('span.error').remove()
