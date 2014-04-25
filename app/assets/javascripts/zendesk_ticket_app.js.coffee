@@ -195,8 +195,4 @@ class ZendeskTicketApp.Session extends ZendeskTicketApp.Base
   destroy: ->
     $.removeCookie 'zendesk_email', { path: '/' }
 
-<% if ZendeskTicket.api_token.present? %>
-$ ->
-  app = new ZendeskTicketApp
-  app.initialize()
-<% end %>
+window.ZendeskTicketApp = ZendeskTicketApp

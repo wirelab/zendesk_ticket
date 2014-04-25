@@ -57,6 +57,15 @@ In your html
 
 If you want to use a custom button to call the popup, you can leave out the zendesk_ticket/button partial and add data-zendesk-ticket-button to your button.
 
+
+Then somewhere in a js file or view you call the app
+```
+$(document).ready(function(){
+  app = new ZendeskTicketApp;
+  app.initialize();
+});
+```
+
 Optional:
 
 Instead of posting the form your app, you can post it to a remote website (if you for instance want a centralized server for handeling the data). If this is the case, set the following ENV variable:
