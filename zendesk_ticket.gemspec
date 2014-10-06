@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.require_paths = ["lib"]
 
-  s.add_dependency "rails", "~> 4.0.0"
+  s.add_dependency "rails", "~> 4.1"
   s.add_dependency 'bundler', '>= 1.1'
   s.add_dependency "jquery-rails", ">= 2.0"
   s.add_dependency "jquery-cookie-rails"
